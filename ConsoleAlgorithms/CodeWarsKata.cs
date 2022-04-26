@@ -73,6 +73,44 @@ namespace ConsoleAlgorithms
             //return walk.Count(x => x == "n") == walk.Count(x => x == "s") && walk.Count(x => x == "e") == walk.Count(x => x == "w") && walk.Length == 10;
         }
 
+        public double[] Tribonacci(double[] signature, int n)
+        {
+            double[] list1 = new double[signature.Length];
+            for(int i=0; i<signature.Length; i++)
+                list1[i] = signature[i];
+            Array.Sort(list1); 
+            
+            if (n < 3)
+            {
+                Array.Resize(ref signature, n);
+                return signature;
+            }
+
+            for (int i = signature.Length; i < n; i++)
+            {
+                //int sigCount = signature.Count();
+                double nextElement = (signature[i - 1] + signature[i - 2] + signature[i - 3]);
+                Array.Resize(ref signature, n);
+                Array.Resize(ref list1, n);
+                
+                signature[i] = nextElement;
+                list1[i] = nextElement;
+            }
+            return signature;
+            /*
+            public double[] Tribonacci(double[] s, int n)
+            {
+                double[] res = new double[n];
+                Array.Copy(s, res, Math.Min(3, n));
+
+                for (int i = 3; i < n; i++)
+                    res[i] = res[i - 3] + res[i - 2] + res[i - 1];
+
+                return n == 0 ? new double[] { 0 } : res;
+            }
+            */
+        }
+
     }
 }
 

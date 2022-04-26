@@ -15,3 +15,9 @@ int[][] jArray = new int[1][]
 //Console.WriteLine(op);
 string[] walk = { "n", "s", "e", "w" };
 Console.WriteLine(CodeWarsKata.IsValidWalk(walk));
+double[] signature = {13,15,19}; //{5, 1, 1, 1, 3};
+var two = codeWarsKata.Tribonacci(signature, 1);
+foreach (int i in two)
+{
+    Console.WriteLine(i);
+}
