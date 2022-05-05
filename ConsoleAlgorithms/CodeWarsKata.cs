@@ -239,15 +239,6 @@ namespace ConsoleAlgorithms
         
         public static string Order(string words)
         {
-            /*
-            List<string> wordList = words.Split(" ").ToList();
-            List<char> moreWords = new List<char>();//words.Split(" ").ToList();
-            foreach (var word in wordList)
-            {
-                moreWords = word.ToCharArray().ToList();
-            }
-            var isDigit = moreWords.Where(x => char.IsDigit(x)).Any();
-            */
             List<string> wordList = words.Split(" ").ToList();
             string[] arrangedWords = new string[words.Length];
             foreach (string word in wordList)
